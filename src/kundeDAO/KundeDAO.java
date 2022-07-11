@@ -17,10 +17,11 @@ public class KundeDAO {
     private KundeDAO() {
         try {
 
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            db = DriverManager.getConnection("jdbc:derby://localhost:1527/xdb");
+            Class.forName("org.sqlite.JDBC");
+            db = DriverManager.getConnection("jdbc:sqlite:xdb");
         } catch (Exception ex) {
             ex.printStackTrace();
+
         }
     }
     

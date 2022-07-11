@@ -9,8 +9,8 @@ public class KundeDAOTest {
         Kunde derKunde = new Kunde(4711l, "Priemer", 1);
         System.out.println("Setze lokale Variable auf NULL und hole Kunden zurück");
         derKunde = null;
-        derKunde = kundeDAO.read(4711l); //So muss der Nutzer KundeDAO kennen (nicht gut!)
-//        derKunde = Kunde.read(4711l); //So bleibt KundeDAO vor Nutzerklassen verborgen!
+        //derKunde = kundeDAO.read(4711l); //So muss der Nutzer KundeDAO kennen (nicht gut!)
+        derKunde = Kunde.read(4711l); //So bleibt KundeDAO vor Nutzerklassen verborgen!
         System.out.println("Kunde ist " + derKunde.getKundennummer() + " "
                 + derKunde.getName()+", "+derKunde.getKundengruppe());
         System.out.println("Aktualisiere den Kunden. Setze Gruppe auf 2");

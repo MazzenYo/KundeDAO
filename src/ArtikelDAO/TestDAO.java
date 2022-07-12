@@ -29,6 +29,5 @@ public class TestDAO {
         a3 = new Artikel(3, "Artikel3", 1.00f, 1, 5);
         a3.setPreis(2.00f);
         a3 = a3.delete();
-        System.out.println("a3=" + a3);
     }
 }

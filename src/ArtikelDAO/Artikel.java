@@ -2,12 +2,12 @@ package ArtikelDAO;
 
 public class Artikel {
 
+    private final AbstractDAO abstractDAO = AbstractDAO.getInstance();
     private long artikelnummer;
     private String bezeichnung;
     private float preis;
     private int bestand;
     private int mindestbestand;
-    private final AbstractDAO abstractDAO = AbstractDAO.getInstance();
 
 
     public Artikel(long artnr, String bezeichnung, float preis, int bestand, int mindestbestand) {

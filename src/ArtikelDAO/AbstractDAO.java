@@ -7,16 +7,11 @@ import static java.lang.System.out;
 
 public class AbstractDAO {
 
-    private final static String insertStatementString =
-            "INSERT INTO ARTIKEL VALUES(?,?,?,?,?)";
-    private final static String findStatementString =
-            "SELECT Artikelnr, Bezeichnung, Preis,Bestand,Mindestbestand FROM Artikel WHERE Artikelnr=?";
-    private final static String updateStatementString =
-            "UPDATE Artikel SET Bezeichnung = ?, Preis = ?, Bestand = ?, Mindestbestand = ?  WHERE Artikelnr = ?";
-    private final static String deleteStatementString =
-            "DELETE FROM Artikel WHERE Artikelnr = ?";
-    private final static String findKleinerMinBestand =
-            "SELECT Artikelnr, Bezeichnung, Preis,Bestand,Mindestbestand FROM Artikel WHERE Bestand < Mindestbestand";
+    private final static String insertStatementString = "INSERT INTO ARTIKEL VALUES(?,?,?,?,?)";
+    private final static String findStatementString = "SELECT Artikelnr, Bezeichnung, Preis,Bestand,Mindestbestand FROM Artikel WHERE Artikelnr=?";
+    private final static String updateStatementString = "UPDATE Artikel SET Bezeichnung = ?, Preis = ?, Bestand = ?, Mindestbestand = ?  WHERE Artikelnr = ?";
+    private final static String deleteStatementString = "DELETE FROM Artikel WHERE Artikelnr = ?";
+    private final static String findKleinerMinBestand = "SELECT Artikelnr, Bezeichnung, Preis,Bestand,Mindestbestand FROM Artikel WHERE Bestand < Mindestbestand";
     private static final AbstractDAO instance = new AbstractDAO();
     private final HashMap<Long, Artikel> cache = new HashMap<>();
     private Connection db;

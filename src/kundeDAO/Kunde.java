@@ -6,7 +6,7 @@ public class Kunde {
     private String name;
     private int kundengruppe;
     //für Zugriff KundeDAO
-    private KundeDAO kundeDAO = KundeDAO.getInstance();
+    private final KundeDAO kundeDAO = KundeDAO.getInstance();
     
     public Kunde(long kdnr, String nme, int kndngrpp) {
         this.kundennummer = kdnr;

@@ -8,11 +8,11 @@ public class KundeDAO {
     /* Wir benoetigen eine Struktur, um uns alle schon im Speicher
      * vorhandenen Kunden zu merken. 
      */
-    private HashMap<Long, Kunde> cache = new HashMap<Long, Kunde>();
+    private final HashMap<Long, Kunde> cache = new HashMap<Long, Kunde>();
     private Connection db;
     private ResultSet rs;
     
-    private static KundeDAO instance = new KundeDAO();
+    private static final KundeDAO instance = new KundeDAO();
     
     private KundeDAO() {
         try {
@@ -69,7 +69,7 @@ public class KundeDAO {
      * im Speicher oder aus der Datenbank
      */
     public Kunde read(long kdnr) {
-        Kunde result = (Kunde) cache.get(kdnr);
+        Kunde result = cache.get(kdnr);
         // Zunaechst in der Registry suchen
         if (result != null) {
             return result;
